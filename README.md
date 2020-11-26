@@ -1,8 +1,9 @@
-### db health check @rust
+# Rust Pinger
 
- - prepare
+-   prepare
+
 ```
 brew install mysql
 ```
-これ入れないとbuildできない。
 
+これ入れないと build できない。
