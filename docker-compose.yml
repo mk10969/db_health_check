@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 
 services:
   mysql_test:
@@ -17,11 +17,10 @@ services:
     # volumes:
     #   - dbdata:/var/lib/mysql
 
-# volumes:
-#   dbdata:
+  # volumes:
+  #   dbdata:
 
   resis_test:
     image: redis:latest
     ports:
       - "${REDIS_PORT}:6379"
-
