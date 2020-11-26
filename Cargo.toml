@@ -1,5 +1,5 @@
 [package]
-name = "rust_ping"
+name = "rust-pinger"
 version = "0.1.0"
 authors = ["mk10969 <mk10969@gmail.com>"]
 edition = "2018"
