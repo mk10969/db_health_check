@@ -1,6 +1,11 @@
-[tasks.image]
+[tasks.image1]
 command = "docker"
-args = ["build", "-t", "mysql-rust-pinger", "."]
+args = ["build", "-t", "mysql-pinger1", "./pinger1/."]
+
+[tasks.image2]
+command = "docker"
+args = ["build", "-t", "mysql-pinger2", "./pinger2/."]
+
 
 [tasks.tag]
 script = [

@@ -8,4 +8,4 @@ COPY . .
 RUN cargo install --path .
 
 ### path通っているのでRunできる。
-ENTRYPOINT ["rust-pinger"]
+ENTRYPOINT ["pinger1"]
