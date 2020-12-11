@@ -2,10 +2,11 @@
 
 -   prepare
 
-    -   これ入れないと build できない。
+    -   これ入れないと diesel_cliが build できない。
 
     ```
     brew install mysql
+    brew install postgresql
     ```
 
     -   cargo-make 有効化
