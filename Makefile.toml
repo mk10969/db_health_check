@@ -8,12 +8,10 @@ args = ["build", "-t", "mysql-pinger2", "./pinger2/."]
 
 
 [tasks.tag]
-script = [
-]
+script = []
 
 [tasks.push]
-script = [
-]
+script = []
 
 [tasks.install]
 command = "cargo"
@@ -24,22 +22,20 @@ command = "cargo"
 args = ["build", "--release"]
 
 [tasks.version]
-script = [
-	"echo ${VERSION:? required}"
-]
+script = ["echo ${VERSION:? required}"]
 
 [tasks.precommit]
 script = [
     "cargo fmt",
-	# "cargo clippy"
+    # "cargo clippy"
 ]
 
 [tasks.publish]
 dependencies = [
-	"version",
-	# "image",
-	# "tag",
-	# "push",
+    "version",
+    # "image",
+    # "tag",
+    # "push",
     "precommit",
-	"package"
+    "package",
 ]
