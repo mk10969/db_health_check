@@ -7,7 +7,7 @@ use std::sync::{
 #[test]
 fn test_ctrl_c() {
     let running = Arc::new(AtomicBool::new(true));
-    // Arcオブジェクトをclone()する。
+    // handlerにて、moveするので、Arcオブジェクトをclone()する。
     let r = running.clone();
 
     ctrlc::set_handler(move || {
@@ -27,7 +27,7 @@ fn test_ctrl_c() {
 
 // ちょっと勉強
 #[cfg(test)]
-mod tests {
+mod tests1 {
     use lazy_static::lazy_static;
     use std::{
         sync::{
@@ -54,7 +54,7 @@ mod tests {
         let thread = spawn(count_up1);
         count_up1();
         thread.join().unwrap();
-        eprintln!("counter = {}", *COUNTER1.lock().unwrap());
+        println!("counter = {}", *COUNTER1.lock().unwrap());
     }
 
     static COUNTER2: AtomicUsize = AtomicUsize::new(0);
@@ -75,6 +75,19 @@ mod tests {
         count_up2();
         // 終了まで待機
         thread.join().unwrap();
-        eprintln!("counter = {}", COUNTER2.load(Ordering::SeqCst));
+        println!("counter = {}", COUNTER2.load(Ordering::SeqCst));
+    }
+}
+
+// Dereference Expressionの例
+#[cfg(test)]
+mod tests2 {
+    #[test]
+    fn test_dereference_expression() {
+        let x = &7;
+        assert_eq!(*x, 7); // 参照外し
+        let y = &mut 9;
+        *y = 11;
+        assert_eq!(*y, 11); // 参照外し
     }
 }
